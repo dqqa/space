@@ -123,8 +123,8 @@ int main(void)
         Vector2 speed = Vector2Scale(Vector2Subtract(mouse_pos, center), 1 / ((float)WINDOW_WIDTH / 2) * SPEED_FACTOR);
 #ifdef DEBUG
         char buf[256];
-        snprintf(buf, sizeof(buf), "SPEED x: %10.2f%%, y: %10.2f%%", speed.x * 100, speed.y * 100);
-        DrawText(buf, 10, 10, 15, WHITE);
+        snprintf(buf, sizeof(buf), "FPS: %.2f\nSPEED x: %10.2f%%, y: %10.2f%%", 1 / dt, speed.x * 100, speed.y * 100);
+        DrawText(buf, 10, 10, 16, WHITE);
 #endif
         update_stars(&speed, dt);
 

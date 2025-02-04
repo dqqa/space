@@ -18,7 +18,10 @@ $(EXE): $(OBJS)
 %.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
-.PHONY: clean all
+.PHONY: clean all debug
+
+debug: CFLAGS += -DDEBUG
+debug: $(EXE)
 
 clean:
 	$(RM) -v ./*.o $(EXE)
